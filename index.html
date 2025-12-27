@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>LAN Project | Главная</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+body{
+    margin:0;
+    font-family:Inter,sans-serif;
+    background:linear-gradient(to bottom,#1b1b1b,#3a0f0f);
+    color:#eee;
+}
+header{
+    background:#0c0c0c;
+    padding:18px 30px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+header h1{font-family:Oswald;color:#ff4b2b}
+nav a{
+    margin-left:18px;
+    color:#ffb199;
+    text-decoration:none;
+    font-weight:500;
+    transition:.2s;
+}
+nav a:hover{color:#ff4b2b}
+.discord{
+    background:#5865F2;
+    padding:8px 14px;
+    border-radius:6px;
+    color:#fff!important;
+}
+section{
+    padding:90px 20px;
+    max-width:1000px;
+    margin:auto;
+    text-align:center;
+}
+h2{font-family:Oswald,sans-serif;font-size:38px;color:#ff4b2b;margin-bottom:20px;}
+p{font-size:18px;line-height:1.7;}
+.button{
+    display:inline-block;
+    margin-top:30px;
+    padding:14px 26px;
+    background:#ff4b2b;
+    color:#fff;
+    border-radius:8px;
+    font-weight:600;
+    text-decoration:none;
+}
+.button:hover{background:#ff6a45}
+</style>
+</head>
+<body>
+
+<audio id="hoverSound" src="sounds/hover.mp3"></audio>
+<audio id="clickSound" src="sounds/click.mp3"></audio>
+
+<header>
+<h1>LAN PROJECT</h1>
+<nav>
+<a href="index.html">Главная</a>
+<a href="tiers.html">Возможности</a>
+<a href="about.html">О сервере</a>
+<a href="inventory.html">Инвентарь</a>
+<a href="wallet.html">Пополнение</a>
+<a class="discord" href="https://discord.gg/QvuPp2bwtw" target="_blank">Discord</a>
+</nav>
+<div class="balance">Счёт: <span id="balance">0</span> J₽</div>
+</header>
+
+<section>
+<h2>Выживание. Крафт. Прогресс.</h2>
+<p>
+Игрок начинает с камня и палки.<br>
+Заканчивает сложными механизмами, техникой и вопросами к балансу.<br>
+Прогресс иногда выглядит подозрительно знакомо…
+</p>
+<a class="button" href="tiers.html">Смотреть возможности</a>
+</section>
+
+<script>
+let balance = parseInt(localStorage.getItem("balance") || 0);
+document.getElementById("balance").innerText = balance;
+
+document.querySelectorAll('a').forEach(el=>{
+  el.addEventListener('mouseenter',()=>document.getElementById("hoverSound").play());
+  el.addEventListener('click',()=>document.getElementById("clickSound").play());
+});
+</script>
+
+</body>
+</html>

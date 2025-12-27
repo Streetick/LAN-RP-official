@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>LAN Project | Магазин</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+body{margin:0;font-family:Inter,sans-serif;background:linear-gradient(to bottom,#1b1b1b,#3a0f0f);color:#eee;}
+header{background:#0c0c0c;padding:18px 30px;display:flex;justify-content:space-between;align-items:center;}
+header h1{font-family:Oswald;color:#ff4b2b;}
+nav a{margin-left:18px;color:#ffb199;text-decoration:none;font-weight:500;transition:.2s;}
+nav a:hover{color:#ff4b2b;}
+.discord{background:#5865F2;padding:8px 14px;border-radius:6px;color:#fff!important;}
+.balance{color:#ffb347;font-weight:600;}
+section{max-width:1200px;margin:auto;padding:60px 20px;}
+h2{font-family:Oswald;color:#ff4b2b;text-align:center;margin-bottom:30px;}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:25px;}
+.card{background:#141414;padding:25px;border-radius:14px;border:1px solid rgba(255,75,43,.3);}
+.icon{width:40px;height:40px;margin-bottom:10px;fill:#ffb347;}
+.old{color:#888;text-decoration:line-through;font-size:14px;}
+.new{color:#ffb347;font-size:20px;font-weight:600;}
+button{margin-top:10px;padding:10px 16px;background:#ff4b2b;color:#fff;border:none;border-radius:6px;cursor:pointer;}
+button:hover{background:#ff6a45;}
+</style>
+</head>
+<body>
+
+<header>
+<h1>LAN PROJECT</h1>
+<nav>
+<a href="index.html">Главная</a>
+<a href="tiers.html">Возможности</a>
+<a href="about.html">О сервере</a>
+<a href="inventory.html">Инвентарь</a>
+<a href="wallet.html">Пополнение</a>
+<a class="discord" href="https://discord.gg/QvuPp2bwtw" target="_blank">Discord</a>
+</nav>
+<div class="balance">Счёт: <span id="balance">0</span> J₽</div>
+</header>
+
+<section>
+<h2>Предметы и улучшения</h2>
+<div class="cards">
+<div class="card">
+<svg class="icon" viewBox="0 0 24 24"><path d="M12 2l5 6h-3v8h-4V8H7z"/></svg>
+<h3>СЛЕДОПЫТ</h3>
+<p>Scrouge +15%</p>
+<div class="old">19999 J₽</div>
+<div class="new">1999 J₽ (-90%)</div>
+<button onclick="buy('Следопыт',1999)">Купить</button>
+</div>
+
+<div class="card">
+<svg class="icon" viewBox="0 0 24 24"><path d="M2 10h14l6 2-6 2H2z"/></svg>
+<h3>Ковбойка</h3>
+<p>Револьвер (HL2)</p>
+<div class="old">129000 J₽</div>
+<div class="new">12900 J₽ (-90%)</div>
+<button onclick="buy('Ковбойка',12900)">Купить</button>
+</div>
+
+<div class="card">
+<svg class="icon" viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="2"/></svg>
+<h3>Карты УНО</h3>
+<p>Тактический предмет</p>
+<div class="old">99000 J₽</div>
+<div class="new">9900 J₽ (-90%)</div>
+<button onclick="buy('УНО',9900)">Купить</button>
+</div>
+
+<div class="card">
+<svg class="icon" viewBox="0 0 24 24"><path d="M12 2a7 7 0 00-4 12v3h4v-3a4 4 0 10-4-4"/></svg>
+<h3>Неизвестное оружие</h3>
+<p>???</p>
+<div class="old">45000 J₽</div>
+<div class="new">4500 J₽ (-90%)</div>
+<button onclick="buy('???',4500)">Купить</button>
+</div>
+</div>
+</section>
+
+<section>
+<h2>Административные привилегии</h2>
+<div class="cards">
+<div class="card"><h3>Модератор 30д</h3><div class="new">4999 J₽</div><button onclick="role('Модератор 30д',4999)">Купить</button></div>
+<div class="card"><h3>Модератор ∞</h3><div class="new">19999 J₽</div><button onclick="role('Модератор ∞',19999)">Купить</button></div>
+<div class="card"><h3>Администратор 30д</h3><div class="new">14999 J₽</div><button onclick="role('Администратор 30д',14999)">Купить</button></div>
+<div class="card"><h3>Администратор ∞</h3><div class="new">59999 J₽</div><button onclick="role('Администратор ∞',59999)">Купить</button></div>
+<div class="card"><h3>СТ.Администратор 30д</h3><div class="new">129999 J₽</div><button onclick="role('СТ.Администратор 30д',129999)">Купить</button></div>
+<div class="card"><h3>СТ.Администратор ∞</h3><div class="new">399999 J₽</div><button onclick="role('СТ.Администратор ∞',399999)">Купить</button></div>
+<div class="card"><h3>Куратор 30д</h3><div class="new">799999 J₽</div><button onclick="role('Куратор 30д',799999)">Купить</button></div>
+<div class="card"><h3>Куратор ∞</h3><div class="new">2499999 J₽</div><button onclick="role('Куратор ∞',2499999)">Купить</button></div>
+<div class="card"><h3>Владелец 30д</h3><div class="new">4999999 J₽</div><button onclick="role('Владелец 30д',4999999)">Купить</button></div>
+<div class="card"><h3>Владелец ∞</h3><div class="new">10000000 J₽</div><button onclick="role('Владелец ∞',10000000)">Купить</button></div>
+</div>
+</section>
+
+<script>
+let balance = parseInt(localStorage.getItem("balance")||0);
+let inv = JSON.parse(localStorage.getItem("inventory")||"[]");
+let roles = JSON.parse(localStorage.getItem("roles")||"[]");
+
+document.getElementById("balance").innerText = balance;
+
+function buy(name,price){
+ if(balance>=price){
+  balance-=price;
+  inv.push(name);
+  save();
+ }
+}
+
+function role(name,price){
+ if(balance>=price){
+  balance-=price;
+  roles.push(name);
+  save();
+ }
+}
+
+function save(){
+ localStorage.setItem("balance",balance);
+ localStorage.setItem("inventory",JSON.stringify(inv));
+ localStorage.setItem("roles",JSON.stringify(roles));
+ document.getElementById("balance").innerText = balance;
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>LAN Project | Пополнение</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+body{
+ margin:0;
+ font-family:Inter,sans-serif;
+ background:linear-gradient(to bottom,#1b1b1b,#3a0f0f);
+ color:#eee;
+}
+header{
+ background:#0c0c0c;
+ padding:18px 30px;
+ display:flex;
+ justify-content:space-between;
+ align-items:center;
+}
+header h1{font-family:Oswald;color:#ff4b2b;}
+nav a{margin-left:18px;color:#ffb199;text-decoration:none;font-weight:500;transition:.2s;}
+nav a:hover{color:#ff4b2b;}
+.discord{background:#5865F2;padding:8px 14px;border-radius:6px;color:#fff!important;}
+.balance{color:#ffb347;font-weight:600;}
+section{max-width:600px;margin:auto;padding:80px 20px;}
+h2{font-family:Oswald;color:#ff4b2b;margin-bottom:20px;}
+input{width:100%;padding:12px;margin:10px 0;border-radius:6px;border:none;font-size:16px;}
+button{width:100%;padding:14px;background:#ff4b2b;color:#fff;border:none;border-radius:6px;font-size:16px;cursor:pointer;}
+button:hover{background:#ff6a45;}
+</style>
+</head>
+<body>
+
+<header>
+<h1>LAN PROJECT</h1>
+<nav>
+<a href="index.html">Главная</a>
+<a href="tiers.html">Возможности</a>
+<a href="about.html">О сервере</a>
+<a href="inventory.html">Инвентарь</a>
+<a href="wallet.html">Пополнение</a>
+<a class="discord" href="https://discord.gg/QvuPp2bwtw" target="_blank">Discord</a>
+</nav>
+<div class="balance">Счёт: <span id="balance">0</span> J₽</div>
+</header>
+
+<section>
+<h2>Пополнение счёта</h2>
+
+<input type="number" id="amount" placeholder="Сумма пополнения">
+<button onclick="addBalance()">Пополнить</button>
+
+<h3 style="margin-top:40px">Промокод</h3>
+<input type="text" id="promo" placeholder="Введите промокод">
+<button onclick="promo()">Применить</button>
+</section>
+
+<script>
+let balance = parseInt(localStorage.getItem("balance") || 0);
+document.getElementById("balance").innerText = balance;
+
+function addBalance(){
+    let a = parseInt(document.getElementById("amount").value || 0);
+    balance += a;
+    localStorage.setItem("balance", balance);
+    document.getElementById("balance").innerText = balance;
+}
+
+function promo(){
+    let p = document.getElementById("promo").value.trim();
+    if(p === "Amwsome te4m"){
+        balance += 2000;
+        localStorage.setItem("balance", balance);
+        document.getElementById("balance").innerText = balance;
+        alert("Промокод применён: +2000 J₽");
+    } else {
+        alert("Неверный промокод");
+    }
+}
+</script>
+
+</body>
+</html>
