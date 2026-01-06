@@ -36,31 +36,33 @@ nav a:hover{color:#ff4b2b}
     border-radius:6px;
     color:#fff!important;
 }
+.balance{color:#ffb347;font-weight:600;}
+
 section{
-    padding:90px 20px;
-    max-width:1000px;
+    padding:80px 20px;
+    max-width:1100px;
     margin:auto;
-    text-align:center;
 }
-h2{font-family:Oswald,sans-serif;font-size:38px;color:#ff4b2b;margin-bottom:20px;}
-p{font-size:18px;line-height:1.7;}
-.button{
-    display:inline-block;
-    margin-top:30px;
-    padding:14px 26px;
-    background:#ff4b2b;
-    color:#fff;
-    border-radius:8px;
-    font-weight:600;
-    text-decoration:none;
+h2,h3{
+    font-family:Oswald,sans-serif;
+    color:#ff4b2b;
 }
-.button:hover{background:#ff6a45}
+p{line-height:1.7;color:#ddd}
+ul{line-height:1.8;font-size:15px}
+li{margin-bottom:8px}
+.rule{
+    background:#141414;
+    border:1px solid rgba(255,75,43,.25);
+    border-radius:10px;
+    padding:18px;
+    margin-bottom:14px;
+}
+.punish{color:#ffb347;font-size:14px}
+.small{font-size:13px;color:#999}
 </style>
 </head>
-<body>
 
-<audio id="hoverSound" src="sounds/hover.mp3"></audio>
-<audio id="clickSound" src="sounds/click.mp3"></audio>
+<body>
 
 <header>
 <h1>LAN PROJECT</h1>
@@ -76,23 +78,182 @@ p{font-size:18px;line-height:1.7;}
 </header>
 
 <section>
-<h2>Выживание. Крафт. Прогресс.</h2>
+<h2>Выживание. Фракции. Доминирование.</h2>
 <p>
-Игрок начинает с камня и палки.<br>
-Заканчивает сложными механизмами, техникой и вопросами к балансу.<br>
-Прогресс иногда выглядит подозрительно знакомо…
+LAN Project — DarkRP-сервер с упором на выживание, JMOD, крафт и развитие фракций.<br>
+Игровой процесс строится на последствиях действий игроков и долгосрочной доминации.
 </p>
-<a class="button" href="tiers.html">Смотреть возможности</a>
+</section>
+
+<section>
+<h2>Правила сервера</h2>
+<p class="small">
+Незнание правил не освобождает от ответственности.<br>
+Знание правил не гарантирует её отсутствия.
+</p>
+
+<!-- ОСНОВНЫЕ RP -->
+
+<h3>1.0 RP-Нарушения</h3>
+
+<div class="rule">
+<b>1.0 NonRP</b><br>
+Действия, противоречащие логике RolePlay и здравому смыслу.
+<div class="punish">Наказание: jail / warn / ban до 3 дней</div>
+</div>
+
+<div class="rule">
+<b>1.0.1 FearRP</b><br>
+Игнорирование угрозы жизни при очевидной опасности.
+<div class="punish">Наказание: jail / warn</div>
+</div>
+
+<div class="rule">
+<b>1.0.2 ArmedRP</b><br>
+Неправомерное использование оружия без RP-причины.
+<div class="punish">Наказание: jail</div>
+</div>
+
+<div class="rule">
+<b>1.0.3 PowerGaming</b><br>
+Выполнение физически или логически невозможных действий.
+<div class="punish">Наказание: jail / warn</div>
+</div>
+
+<div class="rule">
+<b>1.0.4 FreeArrest</b><br>
+Арест без законной или RP-обоснованной причины.
+<div class="punish">Наказание: jail</div>
+</div>
+
+<div class="rule">
+<b>1.0.5 FreeTaser</b><br>
+Использование тазера без угрозы или необходимости.
+<div class="punish">Наказание: jail</div>
+</div>
+
+<div class="rule">
+<b>1.0.6 FreeKill</b><br>
+Убийство без RP-причины.
+<div class="punish">Наказание: jail / warn</div>
+</div>
+
+<div class="rule">
+<b>1.0.7 FreeDamage</b><br>
+Нанесение урона без RP-причины.
+<div class="punish">Наказание: jail</div>
+</div>
+
+<div class="rule">
+<b>1.0.8 RDM</b><br>
+Систематическое убийство без причины.
+<div class="punish">Наказание: jail / ban до 3 дней</div>
+</div>
+
+<div class="rule">
+<b>1.0.9 MassRDM</b><br>
+Массовое убийство игроков без RP.
+<div class="punish">Наказание: ban от 7 дней</div>
+</div>
+
+<!-- ФРАКЦИИ -->
+
+<h3>2.0 Фракции и профессии</h3>
+
+<div class="rule">
+<b>2.0.1 Фракции</b><br>
+Фракции должны иметь RP-цель, структуру и иерархию.
+<div class="punish">Наказание: роспуск фракции</div>
+</div>
+
+<div class="rule">
+<b>2.0.2 Расширения профессий</b><br>
+Создание «накопленных профессий» допускается при RP-обосновании.
+<div class="punish">Наказание: удаление профессии</div>
+</div>
+
+<div class="rule">
+<b>2.0.3 Монополия</b><br>
+Полный контроль ресурсов допустим, если он достигнут RP-путём.
+<div class="punish">Наказание: RP-вмешательство администрации</div>
+</div>
+
+<!-- JMOD -->
+
+<h3>3.0 JMOD и выживание</h3>
+
+<div class="rule">
+<b>3.0.1 Опасные объекты</b><br>
+Использование взрывчатки в людных местах без RP запрещено.
+<div class="punish">Наказание: jail</div>
+</div>
+
+<div class="rule">
+<b>3.0.2 Массовое разрушение</b><br>
+Создание объектов, угрожающих серверу, запрещено.
+<div class="punish">Наказание: ban</div>
+</div>
+
+<!-- АБСУРД -->
+
+<h3>4.0 Прочие положения</h3>
+
+<div class="rule">
+<b>4.0.1 Самообъявление</b><br>
+Запрещено объявлять себя владельцем сервера IC.
+<div class="punish">Наказание: устное предупреждение</div>
+</div>
+
+<div class="rule">
+<b>4.0.2 Легендарные отмазки</b><br>
+Фразы «я новичок», «я не знал», «так всегда делали» не являются аргументом.
+<div class="punish">Наказание: игнор</div>
+</div>
+
+<div class="rule">
+<b>4.0.3 Лаг</b><br>
+Лаги сервера не считаются RP-механикой.
+<div class="punish">Наказание: смирение</div>
+</div>
+
+<!-- АДМИНЫ -->
+
+<h3>5.0 Административные нарушения</h3>
+
+<div class="rule">
+<b>5.0.0 Превышение полномочий</b><br>
+Использование прав не по назначению.
+<div class="punish">Наказание: снятие</div>
+</div>
+
+<div class="rule">
+<b>5.0.1 Покрывательство</b><br>
+Предвзятость или защита знакомых.
+<div class="punish">Наказание: снятие</div>
+</div>
+
+<div class="rule">
+<b>5.0.2 Саморазбор</b><br>
+Разбор жалобы, в которой администратор является участником.
+<div class="punish">Наказание: предупреждение</div>
+</div>
+
+<div class="rule">
+<b>5.0.3 Самовольные правила</b><br>
+Придумывание правил «на ходу».
+<div class="punish">Наказание: обсуждение на собрании</div>
+</div>
+
+<p class="small" style="margin-top:60px;text-align:center">
+LAN Project — сервер без упрощений.<br>
+Если правила кажутся сложными — значит, вы всё правильно поняли.
+</p>
+
 </section>
 
 <script>
 let balance = parseInt(localStorage.getItem("balance") || 0);
 document.getElementById("balance").innerText = balance;
-
-document.querySelectorAll('a').forEach(el=>{
-  el.addEventListener('mouseenter',()=>document.getElementById("hoverSound").play());
-  el.addEventListener('click',()=>document.getElementById("clickSound").play());
-});
 </script>
 
 </body>
